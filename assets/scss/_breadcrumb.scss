@@ -1,0 +1,157 @@
+//page-title-area
+.page-title-area {
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 575px;
+	position: relative;
+
+	@media #{$md} {
+		min-height: 450px;
+	}
+
+	@media #{$xs} {
+		min-height: 400px;
+	}
+
+	@media #{$sm} {
+		min-height: 400px;
+	}
+
+	&::before {
+		content: "";
+		background-color: $theme-color2;
+		opacity: 0.57;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+	& .page-title-wrapper {
+		padding-top: 192px;
+		@media #{$xs} {
+			padding-top: 70px;
+		}
+	}
+	& .page-title-inner {
+		max-width: 389px;
+		text-align: center;
+		margin: 0 auto;
+		position: relative;
+		&:before {
+			content: "";
+			background: rgb(255, 255, 255);
+			opacity: 0.278;
+			position: absolute;
+			left: -10px;
+			top: -10px;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			@media #{$lg} {
+				display: none;
+			}
+			@media #{$md} {
+				display: none;
+			}
+			@media #{$xs} {
+				display: none;
+			}
+		}  
+	}
+}
+.page-title-inner-content {
+	padding: 43px 30px;
+	position: relative;
+	z-index: 5;
+	@media #{$lg} {
+		background: none;
+	}
+	@media #{$md} {
+		background: none;
+	}
+	@media #{$xs} {
+		background: none;
+	}
+	& .page-title {
+		@media #{$xs} {
+			padding-top: 50px;
+		}
+	
+		@media #{$sm} {
+			padding-top: 50px;
+		}
+	
+		& h1 {
+			color: $white;
+			font-size: 65px;
+			line-height: 1;
+			font-family: $ptserif;
+			font-weight: 700;
+			letter-spacing: -0.3px;
+			margin-bottom: 20px;
+	
+			@media #{$md} {
+				font-size: 70px;
+			}
+	
+			@media #{$xs} {
+				font-size: 32px;
+			}
+	
+			@media #{$sm} {
+				font-size: 32px;
+			}
+		}
+	}
+	
+	ul.breadcrumb-list {
+		text-align: left;
+		display: inline-block;
+		& li {
+			display: inline-block;
+			color: $white;
+			font-size: 24px;
+			line-height: 1.1;
+			font-family: $opensans;
+			position: relative;
+			padding: 0 7px;
+	
+			@media #{$xs} {
+				font-size: 20px;
+			}
+	
+			@media #{$sm} {
+				font-size: 20px;
+			}
+	
+			& a {
+				color: $white;
+				font-size: 24px;
+				font-family: $opensans;
+				display: inline-block;
+	
+				@media #{$xs} {
+					font-size: 20px;
+				}
+	
+				@media #{$sm} {
+					font-size: 20px;
+				}
+				& i {
+					font-size: 18px;
+					margin-left: 8px;
+					line-height: 1;
+				}
+			}
+		}
+	}
+}
+.contact-title-inner {
+	max-width: 450px;
+	& .page-title-inner-content {
+		padding: 43px 0px;
+	}
+}
