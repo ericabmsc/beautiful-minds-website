@@ -1,0 +1,39 @@
+# Beautiful Minds Social Center — Netlify configuration
+# Plain HTML site: nothing to build, Netlify just serves these files.
+
+[build]
+  publish = "."
+  command = ""
+
+# --------------------------------------------------------------------------
+# STAGING ONLY — remove this whole block at go-live.
+# Keeps the temporary *.netlify.app preview out of Google so it can't compete
+# with beautifulmindssocialcenter.com. Once the real domain is attached,
+# Netlify redirects the netlify.app address to it automatically.
+# --------------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+# Sensible security defaults
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Long cache for fingerprint-free static assets (safe: they change rarely,
+# and a redeploy of an edited file busts it)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Never cache the pages themselves, so Erica's edits appear immediately
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
