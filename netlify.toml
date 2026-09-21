@@ -5,17 +5,6 @@
   publish = "."
   command = ""
 
-# --------------------------------------------------------------------------
-# STAGING ONLY — remove this whole block at go-live.
-# Keeps the temporary *.netlify.app preview out of Google so it can't compete
-# with beautifulmindssocialcenter.com. Once the real domain is attached,
-# Netlify redirects the netlify.app address to it automatically.
-# --------------------------------------------------------------------------
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
-
 # Sensible security defaults
 [[headers]]
   for = "/*"
